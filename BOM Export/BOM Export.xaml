@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BOM_Export"
         mc:Ignorable="d"
-        Title="BOM_Export" Height="400" MinHeight="275" MaxHeight="600" MinWidth="275"  Width="275" Background="Black">
+        Title="BOM_Export" Height="275" MinHeight="275"  MinWidth="275"  Width="275" Background="Black" SizeToContent="Height" WindowStartupLocation="CenterScreen" Topmost="True">
 
     <Window.Resources>
 
@@ -19,7 +19,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="tblk_Note"  TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding Path=PartNo}"  VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                <TextBlock x:Name="tblk_Note"  TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding PartNo}"  VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
                 <ToggleButton x:Name="btn_Note" Content="Add Note" HorizontalAlignment="Right"  Opacity="1"  Grid.Column=" 1" Margin="5,0,0,0" Grid.Row="0" VerticalAlignment="Top" Visibility="Hidden"/>
                 <DockPanel Grid.Column="0" Grid.Row="1" >
                     <TextBlock x:Name="tblk_creator" Text="{Binding Nomenclature}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
@@ -38,10 +38,10 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="tblk_Note1"  TextWrapping="Wrap" HorizontalAlignment="Left" Text="Binding PartNo" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                <TextBlock x:Name="tblk_Note1"  TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding PartNo}" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
                 <ToggleButton x:Name="btn_Note1" Content="Add Note" HorizontalAlignment="Right"  Opacity="1"  Grid.Column=" 1" Margin="5,0,0,0" Grid.Row="0" VerticalAlignment="Top" Visibility="Hidden"/>
                 <DockPanel Grid.Column="0" Grid.Row="1" >
-                    <TextBlock x:Name="tblk_creator1" Text="{Binding Path=Nomenclature}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
+                    <TextBlock x:Name="tblk_creator1" Text="{Binding Nomenclature}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
                     <TextBlock x:Name="tblk_revision1" Text="{Binding Material}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
                 </DockPanel>
             </Grid>
@@ -53,9 +53,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="25" />
-            <RowDefinition Height="120" MinHeight="120" MaxHeight="120"/>
-            <RowDefinition Height="120*"/>
+            <RowDefinition Height="120" />
             <RowDefinition Height="Auto"/>
+            
         </Grid.RowDefinitions>
         
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="5,0" TextWrapping="Wrap"  VerticalAlignment="Stretch" 
@@ -65,32 +65,33 @@
         <Rectangle Fill="Tan" HorizontalAlignment="Stretch" Height="2" Margin="5,4,0,4" Grid.Row="1" Stroke="Tan" VerticalAlignment="Center" />
         
         <StackPanel HorizontalAlignment="Center" Height="120"  Grid.Row="3"  Width="120" VerticalAlignment="Center"  >
-            <Label Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" MouseDown="Label_MouseDown"/>
-            <Label Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" MouseDown="Label_MouseDown_1"/>
-            <Label Content="excel" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+            <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+            <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+            <Label x:Name="lb_excel" Content="excel" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Grid.Row="4">
+           
             <ListBox x:Name="My2DListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource 2DExportTemplate}"  HorizontalAlignment="Stretch" BorderThickness="1" SelectionMode="Multiple" Background="Black" Foreground="White" >
-                <ListBox.BitmapEffect>
+                <!--<ListBox.BitmapEffect>
                     <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
                 </ListBox.BitmapEffect>
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
-                </ListBox.ItemContainerStyle>
+                </ListBox.ItemContainerStyle>-->
             </ListBox>
-            
-            <ListBox x:Name="My3DListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource 3DExportTemplate}"  HorizontalAlignment="Stretch" BorderThickness="1" SelectionMode="Multiple" Background="Black" Foreground="White" >
-                <ListBox.BitmapEffect>
+
+            <ListBox x:Name="My3DListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource 3DExportTemplate}"  HorizontalAlignment="Stretch" BorderThickness="1" SelectionMode="Multiple" Background="Black" Foreground="Tan"  >
+                <!--<ListBox.BitmapEffect>
                     <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
                 </ListBox.BitmapEffect>
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     </Style>
-                </ListBox.ItemContainerStyle>
+                </ListBox.ItemContainerStyle>-->
             </ListBox>
         </StackPanel>
 
