@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="New_Export"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BOM_Export"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel HorizontalAlignment="Center" Height="120"  Width="120" VerticalAlignment="Center" Margin="90" Grid.RowSpan="1">
+            <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+            <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+            <Label x:Name="lb_excel" Content="excel" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+        </StackPanel>
+
+        <TextBlock x:Name="Tblk_FormatSelector"  HorizontalAlignment="Center" VerticalAlignment="Center"  Height="120" Width="120"
+                   TextAlignment="Center" TextWrapping="WrapWithOverflow"  Text="select format to export"   
+                   FontSize="24" Foreground="White" FontFamily="Segoe UI Light" Padding="5" Background="Black" Margin="90" Grid.RowSpan="1"  >
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <DoubleAnimation                    
+                        Storyboard.TargetProperty="Height"
+                        From="120" To="0" Duration="0:0:01"
+                        AccelerationRatio="0.70" DecelerationRatio="0.1" 
+                        AutoReverse="False" />
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+
+
+
+    </Grid>
+</UserControl>

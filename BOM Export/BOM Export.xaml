@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BOM_Export"
         mc:Ignorable="d"
-        Title="BOM_Export" Height="275" MinHeight="275"  MinWidth="275"  Width="275" Background="Black" SizeToContent="Height" WindowStartupLocation="CenterScreen" Topmost="True">
+        Title="BOM_Export" Height="275" MinHeight="275"  MinWidth="275"  Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" x:Name="win_BOMExport">
 
     <Window.Resources>
 
@@ -57,16 +57,20 @@
             <RowDefinition Height="Auto"/>
             
         </Grid.RowDefinitions>
-        
+       
         <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" Margin="5,0" TextWrapping="Wrap"  VerticalAlignment="Stretch" 
                    FontSize="48" Foreground="Tan" ><Run Text="bom" FontFamily=" Segoe UI Semibold"/><Run Text="export" FontFamily=" Segoe UI Light"/>
         </TextBlock>
         
         <Rectangle Fill="Tan" HorizontalAlignment="Stretch" Height="2" Margin="5,4,0,4" Grid.Row="1" Stroke="Tan" VerticalAlignment="Center" />
         
-        <StackPanel HorizontalAlignment="Center" Height="120"  Grid.Row="3"  Width="120" VerticalAlignment="Center"  >
-            <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
-            <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+        <StackPanel HorizontalAlignment="Center" Height="120"  Grid.Row="3"  Width="120" VerticalAlignment="Center">
+            <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" BorderThickness=".5">
+                
+            </Label>
+            <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" BorderThickness=".5">
+           
+                </Label>
             <Label x:Name="lb_excel" Content="excel" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
         </StackPanel>
         
@@ -98,7 +102,7 @@
         <TextBlock x:Name="Tblk_FormatSelector"  HorizontalAlignment="Center" VerticalAlignment="Center"  Height="120" Width="120"
                    TextAlignment="Center" TextWrapping="WrapWithOverflow"
                    Grid.Row="3"  Text="select format to export"   
-                   FontSize="24" Foreground="White" FontFamily="Segoe UI Light" Padding="5" Background="Black"  >
+                   FontSize="24" Foreground="White" FontFamily="Segoe UI Light" Padding="5" Background="Black" d:IsHidden="True"  >
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
