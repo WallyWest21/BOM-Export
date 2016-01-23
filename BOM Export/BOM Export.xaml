@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BOM_Export"
         mc:Ignorable="d"
-        Title="BOM_Export" Height="275" MinHeight="275"  MinWidth="275"  Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" x:Name="win_BOMExport">
+        Title="BOM_Export" Height="275" MinWidth="275" MinHeight="275"   Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" x:Name="win_BOMExport" SizeToContent="Height" WindowStyle="ThreeDBorderWindow" >
 
     <Window.Resources>
 
@@ -53,7 +53,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="25" />
-            <RowDefinition Height="120" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
             
         </Grid.RowDefinitions>
@@ -63,63 +63,11 @@
         </TextBlock>
         
         <Rectangle Fill="Tan" HorizontalAlignment="Stretch" Height="2" Margin="5,4,0,4" Grid.Row="1" Stroke="Tan" VerticalAlignment="Center" />
-        
-        <StackPanel HorizontalAlignment="Center" Height="120"  Grid.Row="3"  Width="120" VerticalAlignment="Center">
-            <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" BorderThickness=".5">
-                
-            </Label>
-            <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40" BorderThickness=".5">
-           
-                </Label>
-            <Label x:Name="lb_excel" Content="excel" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
+
+        <StackPanel Orientation="Horizontal" Name="sp_MainBody" Grid.Row="3" Height="Auto" HorizontalAlignment="Stretch">
+            
+            
         </StackPanel>
-        
-        <StackPanel Orientation="Vertical" Grid.Row="4">
-           
-            <ListBox x:Name="My2DListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource 2DExportTemplate}"  HorizontalAlignment="Stretch" BorderThickness="1" SelectionMode="Multiple" Background="Black" Foreground="White" >
-                <!--<ListBox.BitmapEffect>
-                    <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
-                </ListBox.BitmapEffect>
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>-->
-            </ListBox>
-
-            <ListBox x:Name="My3DListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource 3DExportTemplate}"  HorizontalAlignment="Stretch" BorderThickness="1" SelectionMode="Multiple" Background="Black" Foreground="Tan"  >
-                <!--<ListBox.BitmapEffect>
-                    <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
-                </ListBox.BitmapEffect>
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>-->
-            </ListBox>
-        </StackPanel>
-
-        <TextBlock x:Name="Tblk_FormatSelector"  HorizontalAlignment="Center" VerticalAlignment="Center"  Height="120" Width="120"
-                   TextAlignment="Center" TextWrapping="WrapWithOverflow"
-                   Grid.Row="3"  Text="select format to export"   
-                   FontSize="24" Foreground="White" FontFamily="Segoe UI Light" Padding="5" Background="Black" d:IsHidden="True"  >
-            <TextBlock.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            
-                            <DoubleAnimation                    
-                        Storyboard.TargetProperty="Height"
-                        From="120" To="0" Duration="0:0:01"
-                        AccelerationRatio="0.70" DecelerationRatio="0.1" 
-                        AutoReverse="False" />
-
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </TextBlock.Triggers>
-        </TextBlock>
-
 
     </Grid>
 </Window>

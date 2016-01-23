@@ -89,6 +89,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UIElementz.vb" />
     <Compile Include="New Export.xaml.vb">
       <DependentUpon>New Export.xaml</DependentUpon>
     </Compile>
