@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BOM_Export"
         mc:Ignorable="d"
-        Title="BOM_Export" Height="275" MinWidth="275" MinHeight="275"   Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" x:Name="win_BOMExport" SizeToContent="Height" WindowStyle="ThreeDBorderWindow" >
+        Title="Bom Export" Height="275" MinWidth="275" MinHeight="275"   Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" x:Name="win_BOMExport" SizeToContent="Height" WindowStyle="ThreeDBorderWindow" >
 
     <Window.Resources>
 
@@ -64,7 +64,7 @@
         
         <Rectangle Fill="Tan" HorizontalAlignment="Stretch" Height="2" Margin="5,4,0,4" Grid.Row="1" Stroke="Tan" VerticalAlignment="Center" />
 
-        <StackPanel Orientation="Horizontal" Name="sp_MainBody" Grid.Row="3" Height="Auto" HorizontalAlignment="Stretch">
+        <StackPanel Orientation="Horizontal" Name="sp_MainBody" Grid.Row="3" Height="Auto" HorizontalAlignment="Center" Background="Black">
             
             
         </StackPanel>
