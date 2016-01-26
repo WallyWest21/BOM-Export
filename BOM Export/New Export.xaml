@@ -46,21 +46,11 @@
                 </DockPanel>
             </Grid>
         </DataTemplate>
-
-        <DataTemplate x:Key="HeaderTitleTemplate">
-            <StackPanel Orientation="Vertical">
-                <TextBlock >
-
-                </TextBlock>
-
-                <TextBlock Text="Facade"/>
-            </StackPanel>
-        </DataTemplate>
-       
+              
         <DataTemplate x:Key="My2DDataTemplate">
-            <DockPanel HorizontalAlignment="Stretch" Width="260" >
+            <DockPanel HorizontalAlignment="Stretch" Width="240" >
                 <Label Content ="QTY" DockPanel.Dock="Left"  VerticalContentAlignment="Center" Margin="5,0" Foreground="White"/>
-                <TextBox Name="tbx_ItemNo" Text="{Binding ItemNo}" DockPanel.Dock="Right" VerticalContentAlignment="Center" Margin="5,0" Width="30" Height="30" VerticalAlignment="Center" IsReadOnly="False"/>
+                <TextBox Name="tbx_ItemNo" Text="{Binding ItemNo}" DockPanel.Dock="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5,0" Width="30" Height="30" VerticalAlignment="Center" Background="Black" Foreground="White" BorderBrush="#FF323232"/>
                 <TextBlock Text ="{Binding PartNo}" DockPanel.Dock="Top"  TextWrapping="WrapWithOverflow"/>
                 <TextBlock Text ="{Binding Nomenclature}" DockPanel.Dock="Bottom" TextWrapping="WrapWithOverflow" Foreground="White" FontSize="12"/>
             </DockPanel>
@@ -76,15 +66,10 @@
 
     </UserControl.Resources>
 
-
-
     <Grid>
         <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" Width="275">
 
             <Grid>
-
-
-
                 <StackPanel HorizontalAlignment="Center" Height="120"  Width="120" VerticalAlignment="Center"  >
                     <Label x:Name="lb_2D" Content="2D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
                     <Label x:Name="lb_3D" Content="3D" Foreground="White" FontSize="24" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="40"/>
@@ -112,7 +97,7 @@
                 </TextBlock>
             </Grid>
 
-            <TabControl x:Name="ExpotedTabs" Margin="0,10" BorderThickness="0" Grid.RowSpan="1" Grid.Row="2" Foreground="White" Background="Black" FontFamily="Segoe UI Semilight" >
+            <TabControl x:Name="ExpotedTabs" Margin="0,10" BorderThickness="0" Grid.RowSpan="1" Grid.Row="2" Foreground="White" Background="#FF141414" FontFamily="Segoe UI Semilight" >
                 <TabControl.Resources>
                     <Style TargetType="{x:Type TabItem}">
                         <Setter Property="Template">
@@ -140,18 +125,20 @@
                         </Setter>
                     </Style>
                 </TabControl.Resources>
-                <TabItem Header="B471356" Background="Black">
-                    <ListBox x:Name="My2DListBox"  Height="Auto" Margin="2"   HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" Background="Black" Foreground="Tan" Grid.Row="1" ItemTemplate="{DynamicResource My2DDataTemplate}"  >
+                <TabItem Header="B471356" Background="Black" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" >
+                    <StackPanel Margin="0,0,20,20"   >
+                        <TextBlock Text="FACADES" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Top" Foreground="White" TextWrapping="WrapWithOverflow">
+                           
+                        </TextBlock>
+                        <ListBox x:Name="My2DListBox"  Height="Auto" Margin="0"   HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" Background="#FF1B1B1B" Foreground="Tan" Grid.Row="1" 
+                            >
 
                     </ListBox>
-
-
-
+                    </StackPanel>
                 </TabItem>
                 <TabItem Header="B471355" Name="tab_SecondTab"  >
 
-                    <ListBox x:Name="My3DListBox"  Height="Auto" Margin="2"   HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" Background="Black" Foreground="Tan" Grid.Row="1" ItemTemplate="{DynamicResource My3DDataTemplate}"  >
-                    </ListBox>
+                   
                 </TabItem>
             </TabControl>
 
