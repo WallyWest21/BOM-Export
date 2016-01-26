@@ -24,4 +24,6 @@ Public Class New_Export
     Private Sub tab_SecondTab_Loaded(sender As Object, e As RoutedEventArgs) Handles tab_SecondTab.Loaded
         tab_SecondTab.Header = "B471356" & vbCrLf & "FACADES"
     End Sub
+
+
 End Class
