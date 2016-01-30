@@ -50,8 +50,10 @@
         <DataTemplate x:Key="My2DDataTemplate">
             <DockPanel HorizontalAlignment="Stretch" Width="240" >
                 <Label Content ="QTY" DockPanel.Dock="Left"  VerticalContentAlignment="Center" Margin="5,0" Foreground="White"/>
-                <TextBox Name="tbx_ItemNo" Text="{Binding ItemNo}" DockPanel.Dock="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5,0" Width="30" Height="30" VerticalAlignment="Center" Background="Black" Foreground="White" BorderBrush="#FF323232"/>
-                <TextBlock Text ="{Binding PartNo}" DockPanel.Dock="Top"  TextWrapping="WrapWithOverflow"/>
+                <TextBox x:Name="tbx_ItemNo" Text="{Binding ItemNo}" DockPanel.Dock="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5,0" Width="30" Height="30" VerticalAlignment="Center" Background="Black" Foreground="White" BorderBrush="#FF323232"/>
+                <TextBlock x:Name="tblk_PartNo"  Text ="{Binding PartNo}" DockPanel.Dock="Top"  TextWrapping="WrapWithOverflow">
+                
+                </TextBlock>
                 <TextBlock Text ="{Binding Nomenclature}" DockPanel.Dock="Bottom" TextWrapping="WrapWithOverflow" Foreground="White" FontSize="12"/>
             </DockPanel>
         </DataTemplate>
@@ -127,10 +129,11 @@
                 </TabControl.Resources>
                 <TabItem Header="B471356" Background="Black" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" >
                     <StackPanel Margin="0,0,20,20"   >
-                        <TextBlock Text="FACADES" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Top" Foreground="White" TextWrapping="WrapWithOverflow">
+                        <TextBlock Text="BONDED STRUCTURE ASSY, LH LOWER 
+GALLEY" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Top" Foreground="White" TextWrapping="WrapWithOverflow">
                            
                         </TextBlock>
-                        <ListBox x:Name="My2DListBox"  Height="Auto" Margin="0"   HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" Background="#FF1B1B1B" Foreground="Tan" Grid.Row="1" 
+                        <ListBox x:Name="My2DListBox"  Height="Auto" Margin="0"   HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" Background="#FF1B1B1B" Foreground="Tan" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto" 
                             >
 
                     </ListBox>
