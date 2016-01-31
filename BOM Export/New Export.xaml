@@ -48,10 +48,10 @@
         </DataTemplate>
               
         <DataTemplate x:Key="My2DDataTemplate">
-            <DockPanel HorizontalAlignment="Stretch" Width="240" >
+            <DockPanel HorizontalAlignment="Stretch" Width="260" Background="#FF1B1B1B">
                 <Label Content ="QTY" DockPanel.Dock="Left"  VerticalContentAlignment="Center" Margin="5,0" Foreground="White"/>
                 <TextBox x:Name="tbx_ItemNo" Text="{Binding ItemNo}" DockPanel.Dock="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5,0" Width="30" Height="30" VerticalAlignment="Center" Background="Black" Foreground="White" BorderBrush="#FF323232"/>
-                <TextBlock x:Name="tblk_PartNo"  Text ="{Binding PartNo}" DockPanel.Dock="Top"  TextWrapping="WrapWithOverflow">
+                <TextBlock x:Name="tblk_PartNo"  Text ="{Binding PartNo}" DockPanel.Dock="Top"  TextWrapping="WrapWithOverflow" Foreground="Tan">
                 
                 </TextBlock>
                 <TextBlock Text ="{Binding Nomenclature}" DockPanel.Dock="Bottom" TextWrapping="WrapWithOverflow" Foreground="White" FontSize="12"/>
@@ -69,7 +69,7 @@
     </UserControl.Resources>
 
     <Grid>
-        <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" Width="275">
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" Width="275" x:Name="sp_MainBody">
 
             <Grid>
                 <StackPanel HorizontalAlignment="Center" Height="120"  Width="120" VerticalAlignment="Center"  >
@@ -99,7 +99,7 @@
                 </TextBlock>
             </Grid>
 
-            <TabControl x:Name="ExpotedTabs" Margin="0,10" BorderThickness="0" Grid.RowSpan="1" Grid.Row="2" Foreground="White" Background="#FF141414" FontFamily="Segoe UI Semilight" >
+            <TabControl x:Name="ExpotedTabsCtrl" Margin="0,10" BorderThickness="0" Grid.RowSpan="1" Grid.Row="2" Foreground="White" Background="#FF141414" FontFamily="Segoe UI Semilight" >
                 <TabControl.Resources>
                     <Style TargetType="{x:Type TabItem}">
                         <Setter Property="Template">
@@ -127,7 +127,7 @@
                         </Setter>
                     </Style>
                 </TabControl.Resources>
-                <TabItem Header="B471356" Background="Black" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" >
+                <!--<TabItem Header="B471356" Background="Black" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" >
                     <StackPanel Margin="0,0,20,20"   >
                         <TextBlock Text="BONDED STRUCTURE ASSY, LH LOWER 
 GALLEY" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Top" Foreground="White" TextWrapping="WrapWithOverflow">
@@ -138,11 +138,8 @@ GALLEY" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Top" Foreground="Whit
 
                     </ListBox>
                     </StackPanel>
-                </TabItem>
-                <TabItem Header="B471355" Name="tab_SecondTab"  >
-
-                   
-                </TabItem>
+                </TabItem>-->
+                
             </TabControl>
 
         </StackPanel>
