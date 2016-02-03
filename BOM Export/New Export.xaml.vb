@@ -7,35 +7,19 @@ Public Class New_Export
     Private Sub lb_2D_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles lb_2D.MouseDown
 
         If oCATIA.IsCATIAOpen = True Then
-            lb_3D.Foreground = New SolidColorBrush(Colors.White)
-            lb_2D.Foreground = New SolidColorBrush(Colors.Tan)
-
-
-            'My2DListBox.BorderThickness = New Thickness(1)
-            'My2DListBox.ItemTemplate = My.Resources.datatemplate("My2DExportTemplate")
-            'this.Resources["My2DExportTemplate"] As DataTemplate
-
-            'My2DListBox.ItemsSource = oDrawing.PartsList()
-            'My2DListBox.ItemTemplate = CType(FindResource("My2DDataTemplate"), DataTemplate)
+            AddNewExport(sender.Name)
         End If
+
+
     End Sub
 
     Private Sub lb_3D_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles lb_3D.MouseDown
-        lb_2D.Foreground = New SolidColorBrush(Colors.White)
-        lb_3D.Foreground = New SolidColorBrush(Colors.Tan)
-        'My3DListBox.ItemsSource = oProduct.PartsList()
-        'My3DListBox.BorderThickness = New Thickness(1)
 
-        'My2DListBox.BorderThickness = New Thickness(1)
-
-
-        'My2DListBox.ItemsSource = oProduct.PartsList()
-        'My2DListBox.ItemTemplate = CType(FindResource("My3DDataTemplate"), DataTemplate)
-
-
-
+        If oCATIA.IsCATIAOpen = True Then
+            AddNewExport(sender.Name)
+        End If
     End Sub
-    Sub AddNewExport()
+    Sub AddNewExport(btnName As String)
 
         Dim ExportedItems = New List(Of TabItem)
 
@@ -49,11 +33,25 @@ Public Class New_Export
         MyExportedListBox.SelectionMode = SelectionMode.Multiple
         MyExportedListBox.Background = New SolidColorBrush(Colors.Black)
         MyExportedListBox.BorderThickness = New Thickness(0)
+        'MyExportedListBox.Height = Double.NaN
 
+        Select Case btnName
+            Case "lb_2D"
 
-        MyExportedListBox.ItemTemplate = CType(FindResource("My2DDataTemplate"), DataTemplate)
-        MyExportedListBox.ItemsSource = oDrawing.PartsList()
+                lb_3D.Foreground = New SolidColorBrush(Colors.White)
+                lb_2D.Foreground = New SolidColorBrush(Colors.Tan)
 
+                MyExportedListBox.ItemTemplate = CType(FindResource("My2DDataTemplate"), DataTemplate)
+                MyExportedListBox.ItemsSource = oDrawing.PartsList()
+
+            Case "lb_3D"
+
+                lb_2D.Foreground = New SolidColorBrush(Colors.White)
+                lb_3D.Foreground = New SolidColorBrush(Colors.Tan)
+
+                MyExportedListBox.ItemTemplate = CType(FindResource("My3DDataTemplate"), DataTemplate)
+                MyExportedListBox.ItemsSource = oProduct.PartsList()
+        End Select
 
         'ExportedItems.Insert(0, NewTab)
         NewTab.Content = MyExportedListBox
@@ -67,6 +65,6 @@ Public Class New_Export
     End Sub
 
     Private Sub lb_excel_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles lb_excel.MouseDown
-        AddNewExport()
+        'AddNewExport()
     End Sub
 End Class
