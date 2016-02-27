@@ -104,6 +104,9 @@ Public Class BOM_Export
     'End Sub
 
     Private Sub win_BOMExport_Loaded(sender As Object, e As RoutedEventArgs) Handles win_BOMExport.Loaded
+
+
+
         WindowHeight = win_BOMExport.Height
         WindowWidth = win_BOMExport.Width
 
@@ -122,6 +125,10 @@ Public Class BOM_Export
 
         uc_NE = New New_Export
         UIE.AddUserControl(sp_MainBody, uc_NE)
+    End Sub
+
+    Private Sub win_BOMExport_Initialized(sender As Object, e As EventArgs) Handles win_BOMExport.Initialized
+        System.Threading.Thread.Sleep(3000)
     End Sub
 
     'Private Sub lb_excel_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles lb_excel.MouseDown

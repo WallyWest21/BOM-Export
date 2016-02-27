@@ -190,5 +190,8 @@
   <ItemGroup>
     <Resource Include="bom_export_icon_7N6_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Bom Export Splash Screen.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

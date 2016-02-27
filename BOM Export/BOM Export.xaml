@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BOM_Export"
         mc:Ignorable="d"
-        Title="Bom Export" Height="275" MinWidth="275" MinHeight="275"   
-        Width="275" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" 
+        Title="Bom Export" Height="275" MinWidth="295" MinHeight="295"   
+        Width="280" Background="Black"  WindowStartupLocation="CenterScreen" Topmost="True" 
         x:Name="win_BOMExport" SizeToContent="Height" Icon="bom_export_icon_7N6_icon.ico" >
 
    
